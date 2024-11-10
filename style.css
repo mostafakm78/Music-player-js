@@ -1,0 +1,120 @@
+body {
+    font-family: vazir;
+    background-color: #F0F0F0;
+    height: 100vh;
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-player {
+    margin-top: 20px;
+    min-height: 100px;
+    background-color: #21325E;
+    width: 300px;
+    padding: 40px;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top div {
+    background-color: #F0F0F0;
+    color: #3E497A;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+#song-img {
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid #F1D00A;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+    margin-top: 10px;
+}
+
+.music-player h2 , .music-player p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.music-player h2 {
+    font-size:30px;
+    font-weight: bold;
+    color: #F0F0F0;
+}
+
+.music-player p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #F1D00A;
+}
+
+#progress {
+    margin-top: 20px;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background-color: #F0F0F0;
+    color: #21325E;
+    border-radius: 5px;
+    direction: ltr;
+    cursor: pointer;
+}
+
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #21325E;
+    border: 5px solid #F1D00A;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.controls {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.controls div {
+    background-color: #F0F0F0;
+    color: #3E497A;
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+
+.controls div:nth-child(2) {
+    scale: 1.5;
+    background-color: #F1D00A;
+    color: #21325E;
+}
+
+.controls div:nth-child(2) i {
+    margin-left: 2px;
+}

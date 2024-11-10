@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./fonts/font.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <title>Music Player</title>
+</head>
+<body>
+    <div class="display">
+        <div class="container">
+            <div class="music-player">
+                <div class="top">
+                    <div><i class="fa fa-bars"></i></div>
+                    <div><i class="fa fa-angle-left"></i></div>
+                </div>
+                <img src="./file/images.jpg" id="song-img">
+                <h2>هایده</h2>
+                <p>ای خدا</p>
+                <audio id="song">
+                    <source src="./file/Hayedeh - Ey Khoda (320-Naslemusic).mp3" type="audio/mpeg">
+                </audio>
+                <input type="range" id="progress" value="0">
+                <div class="controls">
+                    <div onclick="forward()"><i class="fa fa-forward"></i></div>
+                    <div onclick="Play()"><i class="fa fa-play" id="cntlIcon"></i></div>
+                    <div onclick="back()"><i class="fa fa-backward"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const song = document.querySelector('#song')
+        const progress = document.querySelector('#progress')
+        const Cntrl = document.querySelector('#cntlIcon')
+
+        song.onloadedmetadata = function() {
+            progress.max = song.duration
+            progress.value = song.currentTime
+        }
+
+        function Play() {
+            if (Cntrl.classList.contains('fa-pause')) {
+                song.pause()
+                Cntrl.classList.remove('fa-pause')
+                Cntrl.classList.add('fa-play')
+            } else {
+                song.play()
+                Cntrl.classList.add('fa-pause')
+                Cntrl.classList.remove('fa-play')
+            }
+        }
+
+        if (song.play()) {
+            setInterval(() => {
+                progress.value = song.currentTime
+            }, 500);
+        }
+
+        progress.onchange = function() {
+            song.play()
+            song.currentTime = progress.value
+            Cntrl.classList.add('fa-pause')
+            Cntrl.classList.remove('fa-play')
+        }
+
+    </script>
+</body>
+</html>l
